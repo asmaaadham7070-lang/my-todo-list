@@ -1,0 +1,273 @@
+:root {
+  --bg-color: #5b585a;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-main: #2b2d42;
+  --btn-bg: #6c5ce7;
+  --btn-hover: #5a4bcf;
+  --delete-bg: #e74c3c;
+  --delete-hover: #c0392b;
+  --success-color: #2ecc71;
+  --shadow-main: 0 15px 30px rgba(0, 0, 0, 0.18);
+  --shadow-item: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --border-radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.main-container {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-main);
+}
+
+.tasksw {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tasksw h2 {
+  font-size: 2.2rem;
+  color: #4a2e5d;
+  font-weight: 700;
+}
+
+/* العدادات */
+.task-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow-item);
+  border: 1px solid #edf2f7;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.stat-number.completed-num { color: var(--success-color); }
+.stat-number.pending-num { color: #e67e22; }
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* منطقة الإدخال */
+.own {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.ee[type="text"] {
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.ee[type="text"]:focus {
+  border-color: var(--btn-bg);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.button {
+  width: 100%;
+  height: 48px;
+  background-color: var(--btn-bg);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* زر مسح المكتمل */
+.controls-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.clear-btn {
+  background: transparent;
+  color: #718096;
+  border: 1px dashed #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #fee2e2;
+  color: var(--delete-bg);
+  border-color: var(--delete-bg);
+}
+
+/* قائمة المهام */
+.taskk {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-item);
+  border-left: 5px solid var(--btn-bg);
+  transition: all 0.25s ease;
+}
+
+.task p {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 500;
+  flex: 1;
+  margin: 0 12px;
+  word-break: break-word;
+}
+
+/* حالة الإنجاز والشطب */
+.task.completed {
+  background-color: #f8fafc;
+  border-left-color: var(--success-color);
+  opacity: 0.75;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+  color: #a0aec0;
+}
+
+/* الأزرار داخل كل مهمة */
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.check-btn {
+  background: #edf2f7;
+  color: #4a5568;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.check-btn:hover {
+  background: #e2e8f0;
+}
+
+.task.completed .check-btn {
+  background: var(--success-color);
+  color: #ffffff;
+}
+
+.delete-btn {
+  background-color: var(--delete-bg);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: var(--delete-hover);
+}
+
+/* Quick Checklist */
+.two {
+  border-top: 2px dashed #ddd;
+  padding-top: 20px;
+}
+
+.two h3 {
+  font-size: 1.1rem;
+  color: #4a2e5d;
+  margin-bottom: 12px;
+}
+
+.two ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.two li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-item);
+}
+
+.two input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--btn-bg);
+  cursor: pointer;
+}
