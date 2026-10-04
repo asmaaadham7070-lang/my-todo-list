@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="a.css">
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="tasksw">
+      <h2>To-Do-List</h2>
+    </div>
+
+    <!-- العدادات -->
+    <div class="task-stats">
+      <div class="stat-box">
+        <span class="stat-number" id="total-tasks">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number completed-num" id="completed-tasks">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number pending-num" id="pending-tasks">0</span>
+        <span class="stat-label">Pending</span>
+      </div>
+    </div>
+
+    <!-- إدخال مهمة جديدة -->
+    <div class="own">
+      <input class="ee" type="text" placeholder="Add a task...">
+      <button class="button">Add Task</button>
+    </div>
+
+    <!-- زر مسح المكتمل -->
+    <div class="controls-bar">
+      <button id="clear-completed" class="clear-btn">Clear Completed ✓</button>
+    </div>
+
+    <!-- قائمة المهام الديناميكية -->
+    <div class="taskk"></div>
+
+    <!-- قائمة مهام سريعة -->
+    <div class="two">
+      <h3>Quick Checklist</h3>
+      <ul>
+        <li><span>💻 Study</span> <input type="checkbox"></li>
+        <li><span>📝 Practice</span> <input type="checkbox"></li>
+        <li><span>📚 Read</span> <input type="checkbox"></li>
+        <li><span>🏃 Exercise</span> <input type="checkbox"></li>
+        <li><span>📺 Watch TV</span> <input type="checkbox"></li>
+        <li><span>🛒 Shopping</span> <input type="checkbox"></li>
+        <li><span>🏋️ Gym</span> <input type="checkbox"></li>
+        <li><span>🧹 Clean Room</span> <input type="checkbox"></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="a.js"></script>
+</body>
+</html>
